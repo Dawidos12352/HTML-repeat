@@ -56,6 +56,10 @@ button {
   margin: 0 auto;
   padding: 0 15px;
 }
+.container-portfolio {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .section {
   padding-bottom: 94px;
@@ -107,6 +111,7 @@ button {
 .header-links-item:not(:last-child) {
   margin-right: 46px;
 }
+
 .header-links-item {
 }
 .nav-link {
@@ -116,6 +121,7 @@ button {
 }
 .header-contact-list {
   display: flex;
+  position: relative;
 }
 .header-contact-item {
 }
@@ -134,6 +140,33 @@ button {
 }
 .header-icon {
   margin-right: 10px;
+}
+.agency [href='agencja'] {
+  color: var(--active-color);
+}
+.agency::after {
+  content: '';
+  background: var(--active-color);
+  position: absolute;
+  display: block;
+  left: auto;
+  top: 77px;
+  width: 53px;
+  height: 4px;
+  border-radius: 2px;
+}
+.portfolio [href='./portfolio.html'] {
+  color: var(--active-color);
+}
+.portfolio::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 58px;
+  height: 4px;
+  background-color: var(--active-color);
+  left: auto;
+  top: 77px;
 }
 
 /* SECTION BANNER */
@@ -218,6 +251,26 @@ button {
 .office-list {
   display: flex;
   gap: 30px;
+}
+.office-item {
+  position: relative;
+}
+.office-text-box {
+  background: rgba(47, 48, 58, 0.8);
+  width: 370px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: auto;
+  bottom: 3px;
+  z-index: 1;
+}
+.office-text {
+  text-transform: uppercase;
+  color: var(--light-color);
+  font-weight: var(--font-bold);
 }
 
 /* SECTION CONTACTS */
@@ -412,4 +465,33 @@ button {
   font-size: 16px;
   line-height: 30px;
   margin-left: 24px;
+}
+.overlay-box {
+  position: relative;
+  overflow: hidden;
+  width: 370px;
+  height: 294px;
+}
+.overlay {
+  background-color: rgba(33, 150, 243, 0.9);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform: translateY(101%);
+  transition: transform 250ms ease-in-out;
+}
+.overlay-box:hover .overlay {
+  transform: translateY(0);
+}
+.overlay-text {
+  font-size: 18px;
+  color: var(--light-color);
+  line-height: 28px;
 }
